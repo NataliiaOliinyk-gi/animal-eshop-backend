@@ -4,6 +4,8 @@ import cors from "cors";
 import notFoundHandler from "./middlewares/notFoundHandler.js";
 import errorHandler from "./middlewares/errorHandler.js";
 
+import categoriesRouter from "./routers/categoriesRouter.js";
+
 
 const startServer = () => {
 
@@ -13,6 +15,7 @@ const startServer = () => {
     app.use(express.json());
 
 
+    app.use("/api/categories", categoriesRouter);
 
 
     app.use(notFoundHandler);
